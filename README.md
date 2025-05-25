@@ -27,7 +27,7 @@ Freshin Minimart is your go-to online delivery store for fresh groceries, dairy 
 -I am open to contributions! If you have suggestions for improvements or new features, feel free to fork the repository and submit a pull request.
 
 
-## creator
+## Creator
 
 -[siamejoshua506@gmail.com](https://github.com/JosHua20-00/my-final-project.git)
 
