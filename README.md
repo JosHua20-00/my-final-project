@@ -1,6 +1,6 @@
 # Online Grocery Store
  
-## freshin minimart
+## Freshin Minimart
 Freshin Minimart is your go-to online delivery store for fresh groceries, dairy products, and vegetables in Zambia. Enjoy the convenience of having quality produce and essential household items delivered right to your doorstep.
 
 ## Features
