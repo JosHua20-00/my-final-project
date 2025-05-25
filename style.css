@@ -1,0 +1,605 @@
+Body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f4f7f9;
+  color: #333;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for dark mode */
+}
+
+header {
+  background: #28a745;
+  color: white;
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav {
+  display: flex;
+  gap: 15px; /* Increased gap for better spacing */
+  align-items: center; /* Vertically align items in the nav */
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5em 0.8em; /* Add padding for better touch targets */
+  border-radius: 5px; /* Optional: add a slight border radius */
+  transition: background-color 0.3s; /* Smooth hover effect */
+}
+
+nav a:hover {
+  background-color: rgba(0, 0, 0, 0.1); /* Subtle hover feedback */
+}
+
+.hero,
+.featured,
+.product-list,
+.contact,
+.categories,
+.offers,
+.testimonials,
+.why-choose-us {
+  padding: 2em;
+  max-width: 1200px; /* Limit width for better readability on large screens */
+  margin: 0 auto; /* Center the content */
+}
+
+.hero {
+  text-align: center;
+  padding: 4em 2em;
+  background-color: #e9ecef; /* Light background for contrast */
+  border-radius: 12px;
+}
+
+.hero h2 {
+  font-size: 2.5em;
+  margin-bottom: 0.5em;
+  color: #28a745;
+}
+
+.hero p {
+  font-size: 1.1em;
+  color: #555;
+}
+
+.featured h2,
+.product-list h2,
+.contact h2,
+.categories h2,
+.offers h2,
+.testimonials h2,
+.why-choose-us h2 {
+  color: #28a745;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+.product-grid,
+.category-grid,
+.reasons-grid,
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Slightly larger min width */
+  gap: 1.5em;
+}
+
+.product-card,
+.category-card,
+.reason-card,
+.testimonial-card {
+  background: white; /* Changed product card background */
+  padding: 1.5em; /* Increased padding */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Softer shadow */
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s; /* Smooth transitions */
+}
+
+.product-card:hover,
+.category-card:hover,
+.reason-card:hover,
+.testimonial-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.product-card img,
+.category-card img {
+  max-width: 300%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 0.8em;
+}
+
+.product-card h3,
+.category-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  color: #333;
+}
+
+.product-card p {
+  color: #555;
+  margin-bottom: 0.8em;
+}
+
+.product-card button {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 0.7em 1.5em;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1em;
+  transition: background-color 0.3s;
+}
+
+.product-card button:hover {
+  background-color: #1e7e34;
+}
+
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: 1.5em;
+  margin-top: 2em; /* Add some space above the footer */
+}
+
+form input,
+form textarea {
+  width: calc(100% - 20px); /* Adjust for padding and border */
+  padding: 0.8em;
+  margin-bottom: 1.2em;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1em;
+}
+
+button {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 0.8em 2em; /* Slightly larger button */
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1.1em;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #1e7e34;
+}
+
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #333;
+  color: #fff;
+  padding: 1em 1.5em;
+  border-radius: 8px;
+  z-index: 1000;
+  opacity: 0.9;
+}
+
+.dark-mode {
+  background: #1a1a1a;
+  color: #f0f0f0;
+}
+
+.dark-mode header {
+  background: #222;
+}
+
+.dark-mode nav a {
+  color: #ddd;
+}
+
+.dark-mode .hero {
+  background-color: #333;
+  color: #f0f0f0;
+}
+
+.dark-mode .hero h2 {
+  color: #2ecc71; /* A different green for dark mode */
+}
+
+.dark-mode .featured h2,
+.dark-mode .product-list h2,
+.dark-mode .contact h2,
+.dark-mode .categories h2,
+.dark-mode .offers h2,
+.dark-mode .testimonials h2,
+.dark-mode .why-choose-us h2 {
+  color: #2ecc71;
+}
+
+.dark-mode .product-card,
+.dark-mode .category-card,
+.dark-mode .reason-card,
+.dark-mode .testimonial-card {
+  background: #222;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.08);
+}
+
+.dark-mode .product-card h3,
+.dark-mode .category-card h3 {
+  color: #f0f0f0;
+}
+
+.dark-mode .product-card p,
+.dark-mode .category-card p,
+.dark-mode .reason-card p,
+.dark-mode .testimonial-card p {
+  color: #ccc;
+}
+
+.dark-mode form input,
+.dark-mode form textarea {
+  background-color: #333;
+  color: #f0f0f0;
+  border-color: #555;
+}
+
+.dark-mode button {
+  background-color: #2ecc71;
+}
+
+.dark-mode button:hover {
+  background-color: #27ae60;
+}
+
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 1.5em;
+  color: white; /* Ensure the toggle is visible in the header */
+}
+
+#cart-count {
+  background-color: #f8f408; /* A red color for emphasis */
+  color: rgb(24, 22, 22);
+  border-radius: 50%;
+  padding: 0.3em 0.6em;
+  font-size: 0.8em;
+  vertical-align: middle;
+}
+
+/* Styles for the new sections */
+.categories {
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.category-grid {
+  margin-top: 1em;
+}
+
+.category-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.category-card img {
+  width: 80%;
+  max-height: 150px;
+  object-fit: cover;
+}
+
+.offers {
+  background-color: #f9d923; /* A bright color for offers */
+  color: #333;
+  border-radius: 12px;
+  padding: 2em;
+  text-align: center;
+}
+
+.offer-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2em;
+  flex-wrap: wrap;
+}
+
+.offer-banner img {
+  max-width: 300px;
+  height: auto;
+  border-radius: 8px;
+}
+
+.offer-text {
+  text-align: left;
+}
+
+.offers h2 {
+  color: inherit;
+}
+
+.offers .button {
+  background-color: #28a745;
+}
+
+.offers .button:hover {
+  background-color: #1e7e34;
+}
+
+.testimonials {
+  background-color: #e9ecef;
+  border-radius: 12px;
+}
+
+.testimonial-card {
+  text-align: left;
+  background-color: white;
+}
+
+.testimonial-card p.customer {
+  font-style: italic;
+  color: #777;
+  text-align: right;
+}
+
+.why-choose-us {
+  background-color: #fff;
+  border-radius: 12px;
+}
+
+.reasons-grid {
+  margin-top: 1em;
+}
+
+.reason-card {
+  text-align: center;
+}
+
+.reason-card img {
+  max-width: 300px;
+  height: auto;
+  margin-bottom: 0.5em;
+}
+
+.reason-card h3 {
+  color: #28a745;
+  margin-bottom: 0.3em;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #333;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 10;
+  }
+  nav.active {
+    display: flex;
+  }
+  nav a {
+    padding: 1em;
+    text-align: center;
+  }
+  header {
+    position: relative; /* Needed for absolute positioning of nav */
+  }
+  .offer-banner {
+    flex-direction: column;
+    align-items: center;
+  }
+  .offer-banner img {
+    max-width: 100%;
+  }
+}
+.payment-methods {
+  text-align: center;
+  padding: 1.5em;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  margin-top: 2em;
+}
+
+.payment-methods h2 {
+  color: #333;
+  margin-bottom: 1em;
+}
+
+.payment-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5em;
+  align-items: center;
+}
+
+.payment-icons img {
+  height: 40px; /* Adjust size as needed */
+}
+
+.payment-note {
+  color: #777;
+  margin-top: 1em;
+  font-size: 0.9em;
+}
+.checkout {
+    padding: 2em;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.checkout h2 {
+    color: #28a745;
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.checkout-details {
+    background-color: #ddd9d5;
+    padding: 1.5em;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.checkout-details h3 {
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 0.8em;
+}
+
+#checkout-items {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1em;
+}
+
+#checkout-items li {
+    padding: 0.5em 0;
+    border-bottom: 1px solid #eee;
+}
+
+#checkout-items li:last-child {
+    border-bottom: none;
+}
+
+#delivery-address-info {
+    margin-bottom: 1em;
+    color: #555;
+}
+
+#payment-form div {
+    margin-bottom: 0.8em;
+}
+
+#payment-form label {
+    margin-left: 0.5em;
+}
+
+#payment-form button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 1em;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background-color 0.3s;
+}
+
+#payment-form button[type="submit"]:hover {
+    background-color: #1e7e34;
+}
+/* Existing CSS remains the same */
+
+.checkout-details h3 {
+    color: #28a745;
+    margin-top: 1.5em;
+    margin-bottom: 0.8em;
+}
+
+.delivery-options,
+#payment-choices,
+#saved-payment-methods {
+    margin-bottom: 1.5em;
+    padding: 1em;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+}
+
+.delivery-options div,
+#payment-choices div {
+    margin-bottom: 0.8em;
+}
+
+.delivery-options label,
+#payment-choices label {
+    margin-left: 0.5em;
+}
+
+.saved-cards {
+    margin-bottom: 1em;
+    padding: 0.5em;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    background-color: #fff;
+}
+
+#order-note {
+    width: calc(100% - 22px); /* Adjust for padding and border */
+    padding: 0.8em;
+    margin-bottom: 1.5em;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+    resize: vertical; /* Allow vertical resizing */
+}
+
+#payment-form button[type="button"] {
+    background: #1c9b3c; /* Different color for toggle buttons */
+    color: rgb(31, 104, 43);
+    border: none;
+    padding: 0.6em 1.2em;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s;
+    margin-right: 0.5em;
+}
+
+#payment-form button[type="button"]:hover {
+    background-color: #00b336;
+}
+
+#payment-form button[type="submit"] {
+    background: #28a745;
+    color: white;
+    border: none;
+    padding: 0.8em 1.5em;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+    margin-top: 1em;
+}
+
+#payment-form button[type="submit"]:hover {
+    background-color: #1e7e34;
+}
+#backToTopBtn {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed position on the page */
+  bottom: 20px; /* Distance from the bottom */
+  right: 30px; /* Distance from the right */
+  z-index: 99; /* Make sure it does not overlap other elements */
+  border: none; /* Remove default border */
+  outline: none; /* Remove default outline */
+  background-color: #28a745; /* Green background color */
+  color: white; /* White text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+  transition: background-color 0.3s; /* Add transition for a smooth effect */
+}
+
+#backToTopBtn:hover {
+  background-color: #1e7e34; /* Darker green background on hover */
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Freshin - Register</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+   <h1>Freshin</h1>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <nav id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="login.html">Login</a>
+      <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+      <span id="cart-count">0</span>
+    </nav>
+  </header>
+  <section class="contact">
+    <h2>Register</h2>
+    <form id="registerForm" onsubmit="registerUser(event)">
+      <input type="text" id="registerName" placeholder="Your Name" required>
+      <input type="email" id="registerEmail" placeholder="Your Email" required>
+      <input type="password" id="registerPassword" placeholder="Password" required>
+      <button type="submit">Register</button>
+    </form>
+    <p>Already have an account? <a href="login.html">Login here</a></p>
+  </section>
+
+  <footer>
+     <p>&copy; 2025 Freshin Minimart. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

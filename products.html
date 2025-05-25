@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Freshin - Products</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Freshin</h1>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <nav id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="contact.html">Contact Us</a>
+      <a href="register.html">Register</a>
+      <a href="login.html">Login</a>
+      <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+      <a href="#" class="cart-link"><img src="images/bbb (Copy).png" alt="cart" class="cart-icon">
+        <span id="cart-count">0</span></a>
+    </nav>
+  </header>
+  <section class="product-list">
+    <div class="tabs">
+      <button onclick="filterCategory('all')">All</button>
+      <button onclick="filterCategory('vegetable')">Vegetables</button>
+      <button onclick="filterCategory('dairy')">Dairy</button>
+      <button onclick="filterCategory('beverage')">Beverage</button>
+      <button onclick="filterCategory('cosmetics')">Cosmetics</button>
+    </div>
+      <h2>Our Products</h2>
+      <input type="text" id="search" placeholder="Search products..." oninput="filterProducts()">
+      <div class="product-grid">
+        <div class="product-card" data-category="beverage" data-price="30.00">
+          <img src="image232/4ff2be_5b56a841398c4eb8bb34d6b0633550bd~mv2 (Copy).webp" alt="mazoe">
+          <h3>mazoe</h3>
+          <p>K30.00</p>
+          <input type="number" min="1" value="1" id="qty-mazoe">
+          <button onclick="addToCart('mazoe', 30.00, document.getElementById('qty-mazoe').value)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-category="" data-price="20.00">
+          <img src="image232/OIP (11).jpeg" alt="honey">
+          <h3>honey</h3>
+          <p>K20.00</p>
+          <input type="number" min="1" value="1" id="qty-honey">
+          <button onclick="addToCart('honey', 20.00, document.getElementById('qty-honey').value)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-category="dairy" data-price="25.00">
+          <img src="image232/th (3).jpeg" alt="yogurt">
+          <h3>yogurt</h3>
+          <p>K25.00</p>
+          <input type="number" min="1" value="1" id="qty-yogurt">
+          <button onclick="addToCart('yogurt', 25.00, document.getElementById('qty-yogurt').value)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-category="dairy" data-price="15.00">
+          <img src="image232/OIP (12).jpeg" alt="thumb-biscuits">
+          <h3>biscuit</h3>
+          <p>K15.00</p>
+          <input type="number" min="1" value="1" id="qty-biscuit">
+          <button onclick="addToCart('biscuit', 15.00, document.getElementById('qty-biscuit').value)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-category="" data-price="10.00">
+          <img src="images/salt (Copy).jpg" alt="salt">
+          <h3>Salt</h3>
+          <p>K10.00</p>
+          <input type="number" min="1" value="1" id="qty-salt">
+          <button onclick="addToCart('salt', 10.00, document.getElementById('qty-salt').value)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-category="vegetable" data-price="5.00">
+          <img src="images 2/thumb-cucumber.png" alt="thumb-cucumber">
+          <h3>cucumber</h3>
+          <p>K5.00</p>
+          <input type="number" min="1" value="1" id="qty-cucumber">
+          <button onclick="addToCart('cucumber', 5.00, document.getElementById('qty-cucumber').value)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-category="beverage" data-price="25.00">
+          <img src="images 2/thumb-tomatoketchup.png" alt="thumb-tomatoketchup">
+          <h3>tomato ketchup</h3>
+          <p>K25.00</p>
+          <input type="number" min="1" value="1" id="qty-tomatoketchup">
+          <button onclick="addToCart('tomatoketchup', 25.00, document.getElementById('qty-tomatoketchup').value)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-category="cosmetics" data-price="80.00">
+          <img src="image232/due.jpg" alt="vaseline">
+          <h3>vaseline</h3>
+          <p>K80.00</p>
+          <input type="number" min="1" value="1" id="qty-vaseline">
+          <button onclick="addToCart('vaseline', 80.00, document.getElementById('qty-vaseline').value)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-category="cosmetics" data-price="40.00">
+          <img src="images 2/domz.jpg" alt="domestos">
+          <h3>domestos</h3>
+          <p>K40.00</p>
+          <input type="number" min="1" value="1" id="qty-domestos">
+          <button onclick="addToCart('domestos', 40.00, document.getElementById('qty-domestos').value)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-category="cosmetics" data-price="30.00">
+          <img src="images 2/ssoap.jpg" alt="dove soap">
+          <h3>dove soap</h3>
+          <p>K30.00</p>
+          <input type="number" min="1" value="1" id="qty-dove soap">
+          <button onclick="addToCart('dove soap', 30.00, document.getElementById('qty-dove soap').value)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-category="cosmetics" data-price="5.00">
+          <img src="images 2/tttttt.jpg" alt="tissue">
+          <h3>tissue</h3>
+          <p>K5.00</p>
+          <input type="number" min="1" value="1" id="qty-tissue">
+          <button onclick="addToCart('tissue', 5.00, document.getElementById('qty-tissue').value)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-category="" data-price="140.00">
+          <img src="images/cookin oil (Copy).jpg" alt="cooking oil">
+          <h3>Cooking Oil</h3>
+          <p>K140.00</p>
+          <input type="number" min="1" value="1" id="qty-cooking oil">
+          <button onclick="addToCart('cooking oil', 140.00, document.getElementById('qty-cooking oil').value)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-category="" data-price="30.0">
+          <img src="images/water (Copy).jpg" alt="water">
+          <h3>Mineral Water</h3>
+          <p>k30.00</p>
+          <input type="number" min="1" value="1" id="qty-mineral water">
+          <button onclick="addToCart('mineral water', 30.00, document.getElementById('qty-mineral water').value)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-category="vegetable" data-price="10.00">
+          <img src="image232/istockphoto-673162168-612x612.jpg" alt="cabbage">
+          <h3>cabbage</h3>
+          <p>K10.00</p>
+          <input type="number" min="1" value="1" id="qty-cabbage">
+          <button onclick="addToCart('cabbage', 10.00, document.getElementById('qty-cabbage').value)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-category="cosmetics" data-price="140.00">
+          <img src="image232/OIP (5).jpeg" alt="boom powder">
+          <h3>boom powder</h3>
+          <p>K140.00</p>
+          <input type="number" min="1" value="1" id="qty-boom powder">
+          <button onclick="addToCart('boom powder', 140.00, document.getElementById('qty-boom powder').value)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-category="cosmetics" data-price="40.00">
+          <img src="image232/OIP (4).jpeg" alt="boom dish washer">
+          <h3>Boom<br>dish washer</h3>
+          <p>K40.00</p>
+          <input type="number" min="1" value="1" id="qty-boom dish washer">
+          <button onclick="addToCart('boom dish washer', 40.00, document.getElementById('qty-boom dish washer').value)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-category="vegetable" data-price="10.00">
+          <img src="image232/eggg.png" alt="egg plant">
+          <h3>Egg plant</h3>
+          <p>K10.00</p>
+          <input type="number" min="1" value="1" id="qty-egg plant">
+          <button onclick="addToCart('egg plant', 10.00, document.getElementById('qty-egg plant').value)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-category="" data-price="280.00">
+          <img src="image232/OIP (2).jpeg" alt="mothers pride">
+          <h3>Mothers pride </h3>
+          <p>k280.00</p>
+          <input type="number" min="1" value="1" id="qty-Mothers pride">
+          <button onclick="addToCart('Mothers pride', 280.00, document.getElementById('qty-Mothers pride').value)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-category="vegetable" data-price="2.50">
+          <img src="image232/download (1) (Copy).jpeg" alt="pepper">
+          <h3>Pepper</h3>
+          <p>K2.50</p>
+          <input type="number" min="1" value="1" id="qty-Pepper">
+          <button onclick="addToCart('Pepper', 2.50, document.getElementById('qty-Pepper').value)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-category="vegetable" data-price="20.00">
+          <img src="image232/OIP (4) (Copy).jpeg" alt="apples">
+          <h3>Apples</h3>
+          <p>k20.00 / kg</p>
+          <input type="number" min="1" value="1" id="qty-Apples">
+          <button onclick="addToCart('Apples', 20.00, document.getElementById('qty-Apples').value)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-category="beverage" data-price="20.00">
+          <img src="images/thumb-orange-juice.png" alt="orange juice">
+          <h3>Orange juice</h3>
+          <p>K 20.00</p>
+          <input type="number" min="1" value="1" id="qty-Orange juice">
+          <button onclick="addToCart('Orange juice', 20.00, document.getElementById('qty-Orange juice').value)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-category="dairy" data-price="15.00">
+          <img src="image232/GREENGOLD_DairyGold_PB_Spread-1170x734-1 (Copy).png" alt="dairy gold milk">
+          <h3>Dairy gold<br> milk</h3>
+          <p>K15.00</p>
+          <input type="number" min="1" value="1" id="qty-dairy gold">
+          <button onclick="addToCart('Dairy gold', 15.00, document.getElementById('qty-dairy gold').value)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-category="cosmetics" data-price="80.00">
+          <img src="image232/sss (1).jpeg" alt="oh so heavenly">
+          <h3>Oh so heavenly</h3>
+          <p>K80.00</p>
+          <input type="number" min="1" value="1" id="qty-oh so heavenly">
+          <button onclick="addToCart('Oh so heavenly', 80.00, document.getElementById('qty-oh so heavenly').value)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-category="cosmetics" data-price="140.00">
+          <img src="image232/sss (3).jpeg" alt="nivea">
+          <h3>Nivea</h3>
+          <p>K140.00</p>
+          <input type="number" min="1" value="1" id="qty-nivea">
+          <button onclick="addToCart('Nivea', 140.00, document.getElementById('qty-nivea').value)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-category="dairy" data-price="20.00">
+          <img src="image232/sss (2).jpeg" alt="organic milk">
+          <h3>Organic milk</h3>
+          <p>k20.00</p>
+          <input type="number" min="1" value="1" id="qty-organic">
+          <button onclick="addToCart('organic', 20.00, document.getElementById('qty-organic').value)">Add to Cart</button>
+        </div>
+         <div class="product-card" data-category="vegetable" data-price="20.00">
+          <img src="image232/carrott 2 (Copy).jpg" alt="carrotts">
+          <h3>Carrotts</h3>
+          <p>k10.00 / kg</p>
+          <input type="number" min="1" value="1" id="qty-carrotts">
+          <button onclick="addToCart('carrotts', 10.00, document.getElementById('qty-carrotts').value)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-category="dairy" data-price="20.00">
+          <img src="image232/milky way (Copy).jpg" alt=" dairy milk">
+          <h3>Dairy milk</h3>
+          <p>K 20.00</p>
+          <input type="number" min="1" value="1" id="qty-dairy milk">
+          <button onclick="addToCart('dairy milk', 20.00, document.getElementById('qty-dairy milk').value)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-category="vegetable" data-price="15.00">
+          <img src="image232/OIP (1) (Copy).jpeg" alt="bananas">
+          <h3>bananas</h3>
+          <p>K10.00</p>
+          <input type="number" min="1" value="1" id="qty-bananas">
+          <button onclick="addToCart('bananas', 10.00, document.getElementById('qty-bananas').value)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-category="vegetable" data-price="5.00">
+          <img src="image232/OIP (3) (Copy).jpeg" alt="tomatoes">
+          <h3>Tomatoes</h3>
+          <p>K5.00</p>
+          <input type="number" min="1" value="1" id="qty-tomatoes">
+          <button onclick="addToCart('tomatoes', 5.00, document.getElementById('qty-tomatoes').value)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-category="vegetable" data-price="5.00">
+          <img src="image232/OIP (11) (Copy).jpeg" alt="chinese">
+          <h3>Chinese</h3>
+          <p>K5.00</p>
+          <input type="number" min="1" value="1" id="qty-chinese">
+          <button onclick="addToCart('chinese', 5.00, document.getElementById('qty-chinese').value)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-category="dairy" data-price="80.00">
+          <img src="images/eggs (Copy).jpg" alt="eggs tray">
+          <h3>Eggs tray</h3>
+          <p>k80.00</p>
+          <input type="number" min="1" value="1" id="qty-eggs tray">
+          <button onclick="addToCart('eggs tray', 80.00, document.getElementById('qty-eggs tray').value)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-category="vegetable" data-price="20.00">
+          <img src="images/fruit 1 (Copy).jpg" alt="Pineapple">
+          <h3>Pineapple</h3>
+          <p>k20.00</p>
+          <input type="number" min="1" value="1" id="qty-pineapple">
+          <button onclick="addToCart('Pineapple', 20.00, document.getElementById('qty-pineapple').value)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-category="beverage" data-price="20.00">
+          <img src="images/R (3).png" alt="sprite">
+          <h3>Sprite</h3>
+          <p>k20.00</p>
+          <input type="number" min="1" value="1" id="qty-sprite">
+          <button onclick="addToCart('Sprite', 20.00, document.getElementById('qty-sprite').value)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-category="vegetable" data-price="5.00">
+          <img src="images/download (5).jpeg" alt="okra">
+          <h3>Okra</h3>
+          <p>k5.00</p>
+          <input type="number" min="1" value="1" id="qty-okra">
+          <button onclick="addToCart('okra', 5.00, document.getElementById('qty-okra').value)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-category="dairy" data-price="30.00">
+          <img src="images/cadbury-dairy-milk-ice-cream-tub-460ml_9347043002600_Mustakshif (Copy).jpg" alt=" ice cream">
+          <h3>Ice cream<br>dairy</h3>
+          <p>k30.00</p>
+          <input type="number" min="1" value="1" id="qty-ice cream">
+          <button onclick="addToCart('ice cream', 30.00, document.getElementById('qty-ice cream').value)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-category="vegetable" data-price="8.00">
+          <img src="images/OIP (18) (Copy).jpeg" alt="broccoli">
+          <h3>Broccoli</h3>
+          <p>k8.00</p>
+          <input type="number" min="1" value="1" id="qty-broccoli">
+          <button onclick="addToCart('broccoli', 8.00, document.getElementById('qty-broccoli').value)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-category="vegetable" data-price="10.00">
+          <img src="images/download (6).jpeg" alt="cauliflower">
+          <h3>Cauliflower</h3>
+          <p>k10.00</p>
+          <input type="number" min="1" value="1" id="qty-cauliflower">
+          <button onclick="addToCart('Cauliflower', 10.00, document.getElementById('qty-cauliflower').value)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-category="vegetable" data-price="20.00">
+          <img src="images/OIP (12) (Copy).jpeg" alt="strawberries">
+          <h3>Strawberries</h3>
+          <p>k20.00</p>
+          <input type="number" min="1" value="1" id="qty-strawberries">
+          <button onclick="addToCart('strawberries', 20.00, document.getElementById('qty-strawberries').value)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-category="vegetable" data-price="5.00">
+          <img src="images/download (7).jpeg" alt="onion">
+          <h3>Onions</h3>
+          <p>k5.00</p>
+          <input type="number" min="1" value="1" id="qty-onion">
+          <button onclick="addToCart('onion', 5.00, document.getElementById('qty-onion').value)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-category="vegetable" data-price="5.00">
+          <img src="images/OIP (14) (Copy).jpeg" alt="spinach">
+          <h3>Spinach</h3>
+          <p>k5.00</p>
+          <input type="number" min="1" value="1" id="qty-spinach">
+          <button onclick="addToCart('Spinach', 5.00, document.getElementById('qty-spinach').value)">Add to Cart</button>
+        </div>
+         <div class="product-card" data-category="dairy" data-price="20.00">
+          <img src="images/flm (Copy).webp" alt="dodla">
+          <h3>Dodla</h3>
+          <p>k20.00</p>
+          <input type="number" min="1" value="1" id="qty-dodla">
+          <button onclick="addToCart('dodla', 20.00, document.getElementById('qty-dodla').value)">Add to Cart</button>
+        </div>
+         <div class="product-card" data-category="beverage" data-price="18.00">
+          <img src="images/th (4) (Copy).jpeg" alt="pepsi">
+          <h3>Pepsi</h3>
+          <p>k18.00</p>
+          <input type="number" min="1" value="1" id="qty-pepsi">
+          <button onclick="addToCart('pepsi', 18.00, document.getElementById('qty-pepsi').value)">Add to Cart</button>
+        </div>
+         <div class="product-card" data-category="" data-price="30.00">
+          <img src="images/OIP (23) (Copy).jpeg" alt="potatoes">
+          <h3>Potatoes</h3>
+          <p>k30.00</p>
+          <input type="number" min="1" value="1" id="qty-potatoes">
+          <button onclick="addToCart('potatoes', 30.00, document.getElementById('qty-potatoes').value)">Add to Cart</button>
+        </div>
+         <div class="product-card" data-category="beverage" data-price="15.00">
+          <img src="images/36d0c9c8-0cc1-42c2-bd0d-a0c1fe4d4653.ee63fc84a3a730b98fb5de01d197814d (Copy).webp" alt="tropicana">
+          <h3>Tropicana</h3>
+          <p>k15.00</p>
+          <input type="number" min="1" value="1" id="qty-tropicana">
+          <button onclick="addToCart('tropicana', 15.00, document.getElementById('qty-tropicana').value)">Add to Cart</button>
+        </div>
+         <div class="product-card" data-category="beverage" data-price="330.00">
+          <img src="images/R (Copy).jpeg" alt="smirnoff">
+          <h3>Smirnoff</h3>
+          <p>k330.00</p>
+          <input type="number" min="1" value="1" id="qty-smirnoff">
+          <button onclick="addToCart('smirnoff', 330.00, document.getElementById('qty-smirnoff').value)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-category="" data-price="150.00">
+          <img src="images/R (5) (Copy).png" alt="rice">
+          <h3>Rice</h3>
+          <p>k150.00</p>
+          <input type="number" min="1" value="1" id="qty-rice">
+          <button onclick="addToCart('rice', 150.00, document.getElementById('qty-rice').value)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-category="" data-price="10.00">
+          <img src="images 2/oranges (Copy).jpg" alt="orange">
+          <h3>Orange</h3>
+          <p>k10.00</p>
+          <input type="number" min="1" value="1" id="qty-Orange">
+          <button onclick="addToCart('orange', 10.00, document.getElementById('qty-Orange').value)">Add to Cart</button>
+        </div>
+        <div class="product-card" data-category="beverage" data-price="400.00">
+          <img src="images/OIP (24).jpeg" alt="bacardi">
+          <h3>Bacardi</h3>
+          <p>k400.00</p>
+          <input type="number" min="1" value="1" id="qty-barcadi">
+          <button onclick="addToCart('bacardi', 400.00, document.getElementById('qty-barcadi').value)">Add to Cart</button>
+        </div>
+        
+      </div>
+      <h2>Your Cart</h2>
+      <ul id="cart-list"></ul>
+      <p><strong>Total: K<span id="cart-total">0.00</span></strong></p>
+      <div class="delivery-address">
+        <h3>Delivery Address</h3>
+        <textarea id="deliveryAddress" placeholder="Enter your delivery address"></textarea>
+      </div>
+      <button onclick="topFunction()" id="backToTopBtn" title="Go to top">Back to Top</button>`
+      <button onclick="clearCart()">Clear Cart</button>
+      <button onclick="checkout()">Proceed to Checkout</button>
+    </section>
+    
+
+    <footer>
+     <p>&copy; 2025 Freshin Minimart. All rights reserved.<br>created by Joshua Siame.</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+  </html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Freshin - Checkout</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Freshin - Checkout</h1>
+        <nav id="nav-links">
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="contact.html">Contact Us</a>
+            <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+            <a href="#" class="cart-link"><img src="images/bbb (Copy).png" alt="cart" class="cart-icon">
+                <span id="cart-count">0</span></a>
+        </nav>
+    </header>
+
+    <section class="checkout">
+        <h2>Checkout</h2>
+        <div class="checkout-details">
+            <h3>Order Summary</h3>
+            <ul id="checkout-items">
+                </ul>
+            <p><strong>Total: K<span id="checkout-total">0.00</span></strong></p>
+
+            <h3>Delivery Information</h3>
+            <p id="delivery-address-info"></p>
+
+            <h3> Delivery Options</h3>
+            <div class="delivery-options">
+                <div>
+                    <input type="radio" id="standard-delivery" name="delivery" value="standard" checked>
+                    <label for="standard-delivery">Standard Delivery (Estimated 3-5 days) - K15.00</label>
+                </div>
+                <div>
+                    <input type="radio" id="express-delivery" name="delivery" value="express">
+                    <label for="express-delivery">Express Delivery (Estimated 1-2 days) - K30.00</label>
+                </div>
+                </div>
+
+            <h3> Payment Method</h3>
+            <form id="payment-form">
+                <div id="payment-choices">
+                    <div>
+                        <input type="radio" id="mobile-money" name="payment" value="mobile-money" required>
+                        <label for="mobile-money">Mobile Money</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="cash-on-delivery" name="payment" value="cash-on-delivery" required>
+                        <label for="cash-on-delivery">Cash on Delivery</label>
+                    </div>
+                     <div>
+                        <input type="radio" id="visa" name="payment" value="visa" required>
+                        <label for="visa">Visa</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="master-card" name="payment" value="master card" required>
+                        <label for="master-card">Master Card</label>
+                    </div>
+                    </div>
+
+                <div id="saved-payment-methods" style="display:none;">
+                    <h3>Saved Payment Methods</h3>
+                    <div class="saved-cards">
+                        </div>
+                    <button type="button" onclick="showNewPaymentOptions()">Use New Payment Method</button>
+                </div>
+                <button type="button" onclick="showSavedPaymentOptions()">Use Saved Payment</button>
+
+                <h3> Add a Note to Your Order</h3>
+                <textarea id="order-note" placeholder="Optional: Add any special instructions for your order"></textarea>
+
+                <button type="submit">Place Order</button>
+            </form>
+        </div>
+    </section>
+    
+</section>
+
+    <footer>
+        <p>&copy; 2025 Freshin Minimart. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function displayCheckoutDetails() {
+            const checkoutItemsList = document.getElementById("checkout-items");
+            const checkoutTotalSpan = document.getElementById("checkout-total");
+            const deliveryAddressInfo = document.getElementById("delivery-address-info");
+            const cart = JSON.parse(localStorage.getItem("cart")) || [];
+            const total = cart.reduce((sum, item) => sum + (item.price * item.qty), 0).toFixed(2);
+            const address = localStorage.getItem("deliveryAddress") || "No address provided.";
+
+            checkoutItemsList.innerHTML = cart.map(item => `<li>${item.name} - Qty: ${item.qty} - K${(item.price * item.qty).toFixed(2)}</li>`).join('');
+            checkoutTotalSpan.textContent = total;
+            deliveryAddressInfo.textContent = `Deliver To: ${address}`;
+            updateCartCount(); // Update cart count on checkout page as well
+            updateAuthLinks(); // Update authentication links
+        }
+
+        function showSavedPaymentOptions() {
+            document.getElementById("payment-choices").style.display = "none";
+            document.getElementById("saved-payment-methods").style.display = "block";
+            // In a real scenario, you would load saved payment methods here from local storage or backend
+            const savedCardsDiv = document.querySelector(".saved-cards");
+            savedCardsDiv.innerHTML = '<p>No saved payment methods yet.</p>'; // Placeholder
+        }
+
+        function showNewPaymentOptions() {
+            document.getElementById("payment-choices").style.display = "block";
+            document.getElementById("saved-payment-methods").style.display = "none";
+        }
+
+        document.addEventListener('DOMContentLoaded', displayCheckoutDetails);
+
+        document.getElementById('payment-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const selectedPayment = document.querySelector('input[name="payment"]:checked');
+            const selectedDelivery = document.querySelector('input[name="delivery"]:checked');
+            const orderNote = document.getElementById('order-note').value;
+
+            if (selectedPayment && selectedDelivery) {
+                alert(`Order placed successfully! Payment method: ${selectedPayment.value}. Delivery: ${selectedDelivery.value}. Note: ${orderNote}. Total: K${document.getElementById("checkout-total").textContent}.`);
+                localStorage.removeItem("cart");
+                localStorage.removeItem("deliveryAddress");
+                // Optionally redirect to an order confirmation page
+                window.location.href = "index.html";
+            } else {
+                showToast("Please select a payment and delivery method.");
+            }
+        });
+    </script>
+</body>
+</html>
