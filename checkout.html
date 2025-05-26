@@ -98,7 +98,7 @@
             checkoutTotalSpan.textContent = total;
             deliveryAddressInfo.textContent = `Deliver To: ${address}`;
             updateCartCount(); // Update cart count on checkout page as well
-            updateAuthLinks(); // Update authentication links
+            updateAuthLinks(); // 
         }
 
         function showSavedPaymentOptions() {
@@ -126,7 +126,7 @@
                 alert(`Order placed successfully! Payment method: ${selectedPayment.value}. Delivery: ${selectedDelivery.value}. Note: ${orderNote}. Total: K${document.getElementById("checkout-total").textContent}.`);
                 localStorage.removeItem("cart");
                 localStorage.removeItem("deliveryAddress");
-                // Optionally redirect to an order confirmation page
+                
                 window.location.href = "index.html";
             } else {
                 showToast("Please select a payment and delivery method.");
